@@ -1,0 +1,99 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: Production
+
+on:
+  push:
+    branches: [ "main" ]
+    tags: ["*.*.*"]
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
+  CONFIGURATION: "Release"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - run: dotnet --info
+    - run: git --version
+
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        filter: tree:0
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration ${{ env.CONFIGURATION }} --no-restore
+# TBD
+#    - name: Test
+#      run: dotnet test --no-build --verbosity normal
+    - name: Package Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: nugetArtifacts
+        path: |
+          **/*.nupkg
+          **/*.snupkg
+          **/*.symbols.nupkg
+
+    - name: Get branch name
+      id: get_branch
+      run: |
+        if [[ "$GITHUB_REF" == "refs/heads/"* ]]; then
+          branch_name=$(git symbolic-ref --short HEAD)
+          echo "branch-name=$branch_name" >> $GITHUB_OUTPUT
+          exit 0
+        elif [[ "$GITHUB_REF" == "refs/tags/"* ]]; then
+          branches=$(git branch -r --contains tags/$GITHUB_REF_NAME)
+          for branch in $branches; do
+            if [[ $branch == "origin/main" ]]; then
+              echo "branch-name=main" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+          done
+        fi
+
+        echo "::error::Failed to determine branch name"
+        exit 1
+    
+    outputs:
+      branch-name: ${{ steps.get_branch.outputs.branch-name }}
+
+  publish:
+    needs: build
+    if: |
+      success() && (
+      github.event_name == 'push' && github.ref == 'refs/heads/main' ||
+      github.event_name == 'create' && github.ref_type == 'tag' && github.ref == 'refs/tags/*.*.*' && ${{ needs.build.outputs.branch-name }} == 'main'
+      )
+    
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - run: dotnet --info
+      - run: git --version
+
+      - name: Retrieve artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: nugetArtifacts
+
+      - name: Publish to Feedz.io Packages
+        run: dotnet nuget push **/*.nupkg --source ${{ vars.NUGET_SOURCE_PUBLIC }} -ss ${{ vars.NUGET_SOURCE_SYMBOLS_PUBLIC }} --api-key ${{ secrets.NUGET_TOKEN_INTERNAL }} --skip-duplicate

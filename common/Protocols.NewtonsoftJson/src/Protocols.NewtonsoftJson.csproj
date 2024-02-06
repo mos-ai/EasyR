@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+		<RootNamespace>EasyR.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="$(EasyRSharedSourceRoot)JsonUtils.cs" Link="Internal\JsonUtils.cs" />
+		<Compile Include="$(EasyRSharedSourceRoot)TextMessageFormatter.cs" Link="Shared\TextMessageFormatter.cs" />
+		<Compile Include="$(EasyRSharedSourceRoot)TextMessageParser.cs" Link="Shared\TextMessageParser.cs" />
+		<Compile Include="$(EasyRSharedSourceRoot)Utf8BufferTextReader.cs" Link="Shared\Utf8BufferTextReader.cs" />
+		<Compile Include="$(EasyRSharedSourceRoot)Utf8BufferTextWriter.cs" Link="Shared\Utf8BufferTextWriter.cs" />
+		<Compile Include="$(EasyRSharedSourceRoot)MemoryBufferWriter.cs" Link="Shared\MemoryBufferWriter.cs" />
+		<Compile Include="$(EasyRSharedSourceRoot)TryGetReturnType.cs" Link="Shared\TryGetReturnType.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\EasyR.Common\src\EasyR.Common.csproj" />
+	</ItemGroup>
+
+</Project>

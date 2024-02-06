@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+    <RootNamespace>EasyR.Client</RootNamespace>
+    <PackageDescription>EasyR Client.</PackageDescription>
+	<Authors>MOS</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="$(EasyRSharedSourceRoot)AwaitableThreadPool.cs" Link="AwaitableThreadPool.cs" />
+    <Compile Include="$(EasyRSharedSourceRoot)ReflectionHelper.cs" Link="ReflectionHelper.cs" />
+    <Compile Include="$(EasyRSharedSourceRoot)TimerAwaitable.cs" Link="Internal\TimerAwaitable.cs" />
+    <Compile Include="$(EasyRSharedSourceRoot)AsyncEnumerableAdapters.cs" Link="Internal\AsyncEnumerableAdapters.cs" />
+    <Compile Include="$(EasyRSharedSourceRoot)CreateLinkedToken.cs" Link="Internal\CreateLinkedToken.cs" />
+    <Compile Include="$(EasyRSharedSourceRoot)MessageBuffer.cs" Link="MessageBuffer.cs" />
+    <Compile Include="$(SharedSourceRoot)ThrowHelpers\ArgumentNullThrowHelper.cs" LinkBase="Shared" />
+    <Compile Include="$(SharedSourceRoot)ThrowHelpers\ObjectDisposedThrowHelper.cs" LinkBase="Shared" />
+  </ItemGroup>
+    
+  <ItemGroup>
+    <!--<Compile Include="$(SharedSourceRoot)ValueTaskExtensions\**\*.cs" />-->
+    <Compile Include="$(SharedSourceRoot)NonCapturingTimer\*.cs" LinkBase="Shared\NonCapturingTimer" />
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="$(SharedSourceRoot)System.Collections.Generic\*.cs" LinkBase="Shared\System.Collections.Generic" />
+    <Compile Include="$(SharedSourceRoot)System\*.cs" LinkBase="Shared\System" />
+    <Compile Include="$(SharedSourceRoot)System.Threading\*.cs" LinkBase="Shared\System.Threading" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bedrock.Framework" Version="0.1.71-alpha.ge6235168d3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\common\EasyR.Common\src\EasyR.Common.csproj" />
+  </ItemGroup>
+
+</Project>
