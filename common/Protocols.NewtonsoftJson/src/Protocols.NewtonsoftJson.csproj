@@ -1,9 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
-		<RootNamespace>EasyR.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+    <RootNamespace>EasyR.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageDescription>EasyR Protocol (Newtonsoft.Json)</PackageDescription>
+	  <Authors>MOS</Authors>
 	</PropertyGroup>
 
 	<ItemGroup>

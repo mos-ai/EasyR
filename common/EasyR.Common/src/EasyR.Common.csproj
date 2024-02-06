@@ -2,8 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageDescription>EasyR Common Library.</PackageDescription>
-	<Authors>MOS</Authors>
+	  <Authors>MOS</Authors>
   </PropertyGroup>
 
   <ItemGroup>

@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>EasyR.Server</RootNamespace>
+    
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageDescription>EasyR Minimal Server</PackageDescription>
     <Authors>MOS</Authors>
   </PropertyGroup>
