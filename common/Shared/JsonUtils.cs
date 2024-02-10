@@ -32,7 +32,7 @@ internal static class JsonUtils
         // Don't close the output, leave closing to the caller
         writer.CloseOutput = false;
 
-        // SignalR will always write a complete JSON response
+        // EasyR will always write a complete JSON response
         // This setting will prevent an error during writing be hidden by another error writing on dispose
         writer.AutoCompleteOnClose = false;
 

@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bedrock.Framework" Version="0.1.71-alpha.ge6235168d3" />
+    <PackageReference Include="Bedrock.Framework" Version="0.1.73-alpha.ge642abfcf6" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
   </ItemGroup>

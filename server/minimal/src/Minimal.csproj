@@ -10,7 +10,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="$(EasyRSharedSourceRoot)ReflectionHelper.cs" Link="ReflectionHelper.cs" />
+    <Compile Include="$(SharedSourceRoot)ObjectMethodExecutor\*.cs" />
+	<Compile Include="$(EasyRSharedSourceRoot)AsyncEnumerableAdapters.cs" Link="Internal\AsyncEnumerableAdapters.cs" />
+    <Compile Include="$(EasyRSharedSourceRoot)TaskCache.cs" Link="Internal\TaskCache.cs" />
+	<Compile Include="$(EasyRSharedSourceRoot)ClientResultsManager.cs" Link="Internal\ClientResultsManager.cs" />
+	<Compile Include="$(EasyRSharedSourceRoot)CreateLinkedToken.cs" Link="Internal\CreateLinkedToken.cs" />
+    <Compile Include="$(EasyRSharedSourceRoot)MessageBuffer.cs" Link="MessageBuffer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<Compile Include="$(SharedSourceRoot)Microsoft.AspNetCore.Http.Abstractions\IFromServiceMetadata.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bedrock.Framework" Version="0.1.73-alpha.ge642abfcf6" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Connections.Abstractions" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
