@@ -3,11 +3,7 @@
 
 // https://github.com/dotnet/aspnetcore/blob/main/src/Shared/ThrowHelpers/ObjectDisposedThrowHelper.cs
 
-using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
-
-namespace EasyR.Shared;
 
 #nullable enable
 

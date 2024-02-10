@@ -17,6 +17,7 @@
     <Compile Include="$(EasyRSharedSourceRoot)CreateLinkedToken.cs" Link="Internal\CreateLinkedToken.cs" />
     <Compile Include="$(EasyRSharedSourceRoot)MessageBuffer.cs" Link="MessageBuffer.cs" />
     <Compile Include="$(SharedSourceRoot)ThrowHelpers\ArgumentNullThrowHelper.cs" LinkBase="Shared" />
+    <Compile Include="$(SharedSourceRoot)ThrowHelpers\ArgumentOutOfRangeThrowHelper.cs" LinkBase="Shared" />
     <Compile Include="$(SharedSourceRoot)ThrowHelpers\ObjectDisposedThrowHelper.cs" LinkBase="Shared" />
   </ItemGroup>
     
@@ -33,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bedrock.Framework" Version="0.1.73-alpha.ge642abfcf6" />
+    <PackageReference Include="Bedrock.Framework" Version="0.1.74-alpha.g1c2c678392" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
   </ItemGroup>

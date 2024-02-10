@@ -2,12 +2,9 @@
 
 using EasyR;
 
-using Microsoft.AspNetCore.Connections;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-
-using ServerMinimalSample.ConnectionHandlers;
 
 var builder = new HostBuilder();
 

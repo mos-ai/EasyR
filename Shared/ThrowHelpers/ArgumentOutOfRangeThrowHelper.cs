@@ -3,11 +3,8 @@
 
 // https://github.com/dotnet/aspnetcore/blob/main/src/Shared/ThrowHelpers/ArgumentOutOfRangeThrowHelper.cs
 
-using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-
-namespace EasyR.Shared;
 
 internal static partial class ArgumentOutOfRangeThrowHelper
 {
