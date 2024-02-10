@@ -22,7 +22,7 @@ using Microsoft.Extensions.Logging;
 namespace EasyR;
 
 /// <summary>
-/// Encapsulates all information about an individual connection to a SignalR Hub.
+/// Encapsulates all information about an individual connection to a EasyR Hub.
 /// </summary>
 public partial class HubConnectionContext
 {

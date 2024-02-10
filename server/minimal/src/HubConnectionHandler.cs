@@ -19,7 +19,7 @@ using Log = EasyR.HubConnectionHandlerLog;
 namespace EasyR;
 
 /// <summary>
-/// Handles incoming connections and implements the SignalR Hub Protocol.
+/// Handles incoming connections and implements the EasyR Hub Protocol.
 /// </summary>
 public class HubConnectionHandler<THub> : ConnectionHandler where THub : Hub
 {

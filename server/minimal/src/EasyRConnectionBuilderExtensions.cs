@@ -14,7 +14,7 @@ namespace EasyR;
 /// <summary>
 /// Extension methods for <see cref="IConnectionBuilder"/>.
 /// </summary>
-public static class SignalRConnectionBuilderExtensions
+public static class EasyRConnectionBuilderExtensions
 {
     private const DynamicallyAccessedMemberTypes HubAccessibility = DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.PublicMethods;
 

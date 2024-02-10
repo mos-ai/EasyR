@@ -8,7 +8,7 @@ using EasyR.Internal;
 namespace EasyR;
 
 /// <summary>
-/// A base class for a strongly typed SignalR hub.
+/// A base class for a strongly typed EasyR hub.
 /// </summary>
 /// <typeparam name="T">The type of client.</typeparam>
 public abstract class Hub<T> : Hub where T : class
