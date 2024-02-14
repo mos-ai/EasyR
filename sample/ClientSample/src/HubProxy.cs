@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
+using System;
+
 namespace ClientSample;
 
 public class HubProxy

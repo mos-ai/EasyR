@@ -5,6 +5,10 @@
 	</PropertyGroup>
 	
   <PropertyGroup>
+    <_IsSdkProject>$([System.Text.RegularExpressions.Regex]::IsMatch(`$([System.IO.File]::ReadAllText(`$(MSBuildProjectFullPath)`))`, `(?s-i)(^|\s|&gt;)&lt;Project\s(([^&gt;]*?)\s)?Sdk(\s*?)=(\s*?)"`))</_IsSdkProject>
+  </PropertyGroup>
+	
+  <PropertyGroup>
     <SharedSourceRoot>$(MSBuildThisFileDirectory)Shared\</SharedSourceRoot>
     <EasyRSharedSourceRoot>$(MSBuildThisFileDirectory)common\Shared\</EasyRSharedSourceRoot>
   </PropertyGroup>

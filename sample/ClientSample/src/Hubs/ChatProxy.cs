@@ -1,5 +1,7 @@
 ﻿using EasyR.Client;
 
+using System.Threading.Tasks;
+
 namespace ClientSample.Hubs;
 
 public class ChatProxy

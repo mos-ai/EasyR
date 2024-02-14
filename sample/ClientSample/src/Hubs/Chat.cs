@@ -4,6 +4,9 @@ using EasyR.Client;
 
 using Microsoft.Extensions.Logging;
 
+using System;
+using System.Collections.Generic;
+
 namespace ClientSample.Hubs;
 
 internal class Chat : IHubListener, IDisposable

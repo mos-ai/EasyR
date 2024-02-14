@@ -58,6 +58,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientSample", "sample\Clie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerMinimalSample", "sample\ServerMinimalSample\src\ServerMinimalSample.csproj", "{F778EAD9-C5DA-4567-B664-355A8B208D7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientSample.Net471", "sample\ClientSample.Net471\src\ClientSample.Net471.csproj", "{418FBF38-C1FD-491A-B33B-8E8556333DDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{F778EAD9-C5DA-4567-B664-355A8B208D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F778EAD9-C5DA-4567-B664-355A8B208D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F778EAD9-C5DA-4567-B664-355A8B208D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{418FBF38-C1FD-491A-B33B-8E8556333DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{418FBF38-C1FD-491A-B33B-8E8556333DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{418FBF38-C1FD-491A-B33B-8E8556333DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{418FBF38-C1FD-491A-B33B-8E8556333DDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{FC679762-9478-447A-A53D-C5E75C654747} = {5E755FB9-3F2F-4CED-BA6D-5CEE9BE1C66E}
 		{CE0D745A-ED59-4293-B5D9-62FB1F95702C} = {EB7B18D3-A4FD-46B8-9C21-D3B98BB6236C}
 		{F778EAD9-C5DA-4567-B664-355A8B208D7D} = {EB7B18D3-A4FD-46B8-9C21-D3B98BB6236C}
+		{418FBF38-C1FD-491A-B33B-8E8556333DDB} = {EB7B18D3-A4FD-46B8-9C21-D3B98BB6236C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {13DDF585-0C00-4E31-A775-C65C2F6DD9B7}

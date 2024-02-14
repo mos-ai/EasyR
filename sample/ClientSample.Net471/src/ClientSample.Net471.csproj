@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{418FBF38-C1FD-491A-B33B-8E8556333DDB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ClientSample.Net471</RootNamespace>
+    <AssemblyName>ClientSample.Net471</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MinVerSkip>true</MinVerSkip>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\ClientSample\src\HubProxy.cs">
+      <Link>HubProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ClientSample\src\Hubs\Chat.cs">
+      <Link>Hubs/Chat.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ClientSample\src\Hubs\ChatProxy.cs">
+      <Link>Hubs/ChatProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ClientSample\src\Hubs\Internal\HubConnectionExtensions.cs">
+      <Link>Hubs/Internal/HubConnectionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ClientSample\src\Hubs\Internal\IHubListener.cs">
+      <Link>Hubs/Internal/IHubListener.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ClientSample\src\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Backports.System.IO.Pipes">
+      <Version>1.1.0</Version>
+      <Aliases>Backports</Aliases>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Hosting">
+      <Version>8.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\clients\csharp\Client.Unity\src\Client.Unity.csproj">
+      <Project>{363a9c64-ecf2-4469-bf14-b9af3862ca61}</Project>
+      <Name>Client.Unity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\EasyR.Common\src\EasyR.Common.csproj">
+      <Project>{1912C25E-C2D6-4442-B5CD-4EF47A28E517}</Project>
+      <Name>EasyR.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\Protocols.NewtonsoftJson\src\Protocols.NewtonsoftJson.csproj">
+      <Project>{cc0ddb7b-f592-49fb-aa95-3af2402b1fe9}</Project>
+      <Name>Protocols.NewtonsoftJson</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,4 +1,10 @@
-﻿
+﻿#if !NETCOREAPP1_0_OR_GREATER
+extern alias Backports;
+
+using Backports::System.IO.Pipes;
+using PipeOptions = Backports::System.IO.Pipes.PipeOptions;
+#endif
+
 using Bedrock.Framework;
 
 using ClientSample;
@@ -9,6 +15,10 @@ using EasyR.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 var builder = new HostBuilder();
 

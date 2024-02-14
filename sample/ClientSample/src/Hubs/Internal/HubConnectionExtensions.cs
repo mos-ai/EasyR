@@ -2,6 +2,8 @@
 
 using Microsoft.Extensions.DependencyInjection;
 
+using System;
+
 namespace ClientSample.Hubs.Internal;
 
 internal static class HubConnectionExtensions
