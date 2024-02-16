@@ -1,8 +1,7 @@
 ﻿#if !NETCOREAPP1_0_OR_GREATER
-extern alias Backports;
-
-using Backports::System.IO.Pipes;
-using PipeOptions = Backports::System.IO.Pipes.PipeOptions;
+using Backports.System.IO.Pipes;
+#else
+using System.IO.Pipes;
 #endif
 
 using Bedrock.Framework;

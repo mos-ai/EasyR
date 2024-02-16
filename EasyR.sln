@@ -60,6 +60,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerMinimalSample", "samp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientSample.Net471", "sample\ClientSample.Net471\src\ClientSample.Net471.csproj", "{418FBF38-C1FD-491A-B33B-8E8556333DDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientSample.Net461", "sample\ClientSample.Net461\src\ClientSample.Net461.csproj", "{9D7DECC5-2BC9-47C2-8861-12067CC3E5E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,9 @@ Global
 		{418FBF38-C1FD-491A-B33B-8E8556333DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{418FBF38-C1FD-491A-B33B-8E8556333DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{418FBF38-C1FD-491A-B33B-8E8556333DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D7DECC5-2BC9-47C2-8861-12067CC3E5E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D7DECC5-2BC9-47C2-8861-12067CC3E5E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D7DECC5-2BC9-47C2-8861-12067CC3E5E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,6 +117,7 @@ Global
 		{CE0D745A-ED59-4293-B5D9-62FB1F95702C} = {EB7B18D3-A4FD-46B8-9C21-D3B98BB6236C}
 		{F778EAD9-C5DA-4567-B664-355A8B208D7D} = {EB7B18D3-A4FD-46B8-9C21-D3B98BB6236C}
 		{418FBF38-C1FD-491A-B33B-8E8556333DDB} = {EB7B18D3-A4FD-46B8-9C21-D3B98BB6236C}
+		{9D7DECC5-2BC9-47C2-8861-12067CC3E5E7} = {EB7B18D3-A4FD-46B8-9C21-D3B98BB6236C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {13DDF585-0C00-4E31-A775-C65C2F6DD9B7}

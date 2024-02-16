@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{418FBF38-C1FD-491A-B33B-8E8556333DDB}</ProjectGuid>
+    <ProjectGuid>{9D7DECC5-2BC9-47C2-8861-12067CC3E5E7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ClientSample.Net471</RootNamespace>
-    <AssemblyName>ClientSample.Net471</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <RootNamespace>ClientSample.Net461</RootNamespace>
+    <AssemblyName>ClientSample.Net461</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
