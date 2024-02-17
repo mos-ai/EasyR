@@ -46,3 +46,6 @@ _site/
 
 # Include files in the refs folder.
 !/src/Bedrock.Framework/refs/*
+
+# Include files in the Protocols Newtonsoft.Json dependencies folder.
+!/common/Protocols.NewtonsoftJson/deps/**/*
