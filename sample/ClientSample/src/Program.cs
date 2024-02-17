@@ -48,6 +48,18 @@ await ConnectAsync(connection);
 
 var server = ActivatorUtilities.CreateInstance<HubProxy>(host.Services);
 
+var shutdown = false;
+Console.CancelKeyPress += (_,_) => shutdown = true;
+
+Console.WriteLine("Enter a message to send, press Ctrl+C to shutdown.");
+while (!shutdown)
+{
+    var message = Console.ReadLine();
+    if (message == null)
+        break;
+    await server.Chat.Whisper("ClientSender", "ServerRecipient", message);
+}
+
 await hostTask;
 await host.WaitForShutdownAsync();
 

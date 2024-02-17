@@ -13,6 +13,7 @@ public class Chat : Hub<IChatClient>
         this.logger = logger;
     }
 
+    [HubMethodName("/chat/whisper")]
     public Task WhisperPlayer(string sender, string recipient, string message)
     {
         logger.LogInformation("message received: whisper (sender = '{Sender}', Recipient = '{Recipient}', Message = '{Message}'", sender, recipient, message);
