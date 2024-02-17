@@ -21,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="..\deps\Newtonsoft.Json-for-Unity-13.0.102\Plugins\Newtonsoft.Json AOT\Newtonsoft.Json.dll" Link="Newtonsoft.Json.dll">
+	  <None Include="..\deps\Newtonsoft.Json-for-Unity-13.0.102\Plugins\Newtonsoft.Json AOT\Newtonsoft.Json.dll" Link="Newtonsoft.Json.dll" Pack="True">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
 	</ItemGroup>
@@ -39,7 +39,6 @@
 		<!--<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />-->
 	  <Reference Include="Newtonsoft.Json">
 	    <HintPath>..\deps\Newtonsoft.Json-for-Unity-13.0.102\Plugins\Newtonsoft.Json AOT\Newtonsoft.Json.dll</HintPath>
-	    <Private>True</Private>
 	  </Reference>
 	</ItemGroup>
 
