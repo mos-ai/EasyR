@@ -18,6 +18,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Net;
 
 var builder = new HostBuilder();
 
@@ -28,7 +29,7 @@ builder.ConfigureServices(services =>
         config.AddConsole();
         config.SetMinimumLevel(LogLevel.Trace);
     });
-    services.AddSingleton(serviceProvider => CreateConnection(serviceProvider));
+    services.AddSingleton(serviceProvider => CreateSocketConnection(serviceProvider));
 
     // Register Hubs
     services.AddSingleton<ClientSample.Hubs.Chat>();
@@ -50,18 +51,30 @@ var server = ActivatorUtilities.CreateInstance<HubProxy>(host.Services);
 await hostTask;
 await host.WaitForShutdownAsync();
 
-static HubConnection CreateConnection(IServiceProvider serviceProvider)
+static HubConnection CreateNamedPipeConnection(IServiceProvider serviceProvider)
 {
     var endPoint = new NamedPipeEndPoint("default", ".", impersonationLevel: System.Security.Principal.TokenImpersonationLevel.None);
     var builder = new HubConnectionBuilder();
-    
-    builder.Services.AddSingleton<Microsoft.AspNetCore.Connections.IConnectionFactory, NamedPipeConnectionFactory>();
-    builder.AddNewtonsoftJsonProtocol();
+
     builder.WithNamedPipe(endPoint);
+    builder.AddNewtonsoftJsonProtocol();
 
     builder.Services.AddLogging();
     return builder.Build();
 }
+
+static HubConnection CreateSocketConnection(IServiceProvider serviceProvider)
+{
+    var endPoint = new IPEndPoint(IPAddress.Loopback, 9000);
+    var builder = new HubConnectionBuilder();
+
+    builder.WithSocket(endPoint);
+    builder.AddNewtonsoftJsonProtocol();
+
+    builder.Services.AddLogging();
+    return builder.Build();
+}
+
 
 static async Task<bool> ConnectAsync(HubConnection connection, CancellationToken token = default)
 {

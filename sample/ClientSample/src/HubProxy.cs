@@ -6,7 +6,7 @@ namespace ClientSample;
 
 public class HubProxy
 {
-    public Hubs.ChatProxy Chat { get; init; }
+    public Hubs.ChatProxy Chat { get; set; }
 
     public HubProxy(IServiceProvider services)
     {

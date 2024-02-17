@@ -38,6 +38,19 @@ public static class HubConnectionBuilderExtensions
             throw new InvalidOperationException($"Invalid endpoint for named pipe: {endPoint}");
         }
 
+        hubConnectionBuilder.Services.AddSingleton<Microsoft.AspNetCore.Connections.IConnectionFactory, NamedPipeConnectionFactory>();
+        hubConnectionBuilder.Services.AddSingleton(endPoint);
+        return hubConnectionBuilder;
+    }
+
+    public static IHubConnectionBuilder WithSocket(this IHubConnectionBuilder hubConnectionBuilder, EndPoint endPoint)
+    {
+        if (endPoint is not IPEndPoint)
+        {
+            throw new InvalidOperationException($"Invalid endpoint for socket: {endPoint}");
+        }
+
+        hubConnectionBuilder.Services.AddSingleton<Microsoft.AspNetCore.Connections.IConnectionFactory, SocketConnectionFactory>();
         hubConnectionBuilder.Services.AddSingleton(endPoint);
         return hubConnectionBuilder;
     }

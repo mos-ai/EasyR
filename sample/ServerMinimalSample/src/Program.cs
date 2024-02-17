@@ -21,12 +21,21 @@ builder.ConfigureServices(services =>
 });
 builder.ConfigureServer(server =>
 {
-    server.UseNamedPipes(configure =>
+    server.UseNamedPipes(namedPipes =>
     {
-        configure.Listen(new Bedrock.Framework.NamedPipeEndPoint("default", ".", impersonationLevel: System.Security.Principal.TokenImpersonationLevel.None), builder =>
+        namedPipes.Listen(new Bedrock.Framework.NamedPipeEndPoint("default", ".", impersonationLevel: System.Security.Principal.TokenImpersonationLevel.None), builder =>
         {
             builder.UseConnectionLogging();
             
+            builder.UseHub<ServerMinimalSample.Hubs.Chat>();
+        });
+    });
+    server.UseSockets(sockets =>
+    {
+        sockets.ListenAnyIP(9000, builder =>
+        {
+            builder.UseConnectionLogging();
+
             builder.UseHub<ServerMinimalSample.Hubs.Chat>();
         });
     });
