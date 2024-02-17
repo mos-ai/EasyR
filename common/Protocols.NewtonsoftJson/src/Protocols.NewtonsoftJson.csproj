@@ -21,9 +21,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="..\deps\Newtonsoft.Json-for-Unity-13.0.102\Plugins\Newtonsoft.Json AOT\Newtonsoft.Json.dll" Link="Newtonsoft.Json.dll" Pack="True">
+	  <Content Include="..\deps\Newtonsoft.Json-for-Unity-13.0.102\Plugins\Newtonsoft.Json AOT\Newtonsoft.Json.dll" Link="Newtonsoft.Json.dll" Pack="True" PackagePath="content">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </None>
+	  </Content>
 	</ItemGroup>
 
 	<ItemGroup>
