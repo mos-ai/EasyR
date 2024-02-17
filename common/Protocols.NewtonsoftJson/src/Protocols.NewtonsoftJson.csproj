@@ -32,7 +32,8 @@
 	<ItemGroup>
 		<!--<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />-->
 	  <Reference Include="Newtonsoft.Json">
-	    <HintPath>..\deps\Newtonsoft.Json-for-Unity-11.0.202\Plugins\Newtonsoft.Json Portable\Newtonsoft.Json.dll</HintPath>
+	    <HintPath>..\deps\Newtonsoft.Json-for-Unity-13.0.102\Plugins\Newtonsoft.Json AOT\Newtonsoft.Json.dll</HintPath>
+	    <Private>True</Private>
 	  </Reference>
 	</ItemGroup>
 
